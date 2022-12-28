@@ -14,6 +14,7 @@ for i in pelican-themes/* ; do
       --theme-path pelican-themes/$theme \
       --output output/$theme \
       --ignore-cache \
-      --delete-output-directory
+      --delete-output-directory \
+      --quiet
   fi
 done
