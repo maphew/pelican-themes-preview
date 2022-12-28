@@ -62,14 +62,18 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install Pelican
-        run: python -m pip install pelican[markdown]
+        run: python -m pip install pelican[markdown] mako
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Generate theme output files
         run: |
           echo sh ./make-theme-outputs.sh
           sh ./make-theme-outputs.sh
-                  
+      
+      # GH Pages doesn't allow directory browsing
+      - name: Make index.html for the output dir
+        run: python ./make-index.py output
+
       # Deploy to Github Pages
       - name: Setup Pages
         uses: actions/configure-pages@v2
