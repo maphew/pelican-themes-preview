@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Build Pelican Themes Output
+name: Build Pelican themes sites and deploy to GH Pages
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -61,7 +61,7 @@ jobs:
           submodules: recursive
 
       # Runs a single command using the runners shell
-      - name: Install Pelican
+      - name: Install Pelican and Mako
         run: python -m pip install pelican[markdown] mako
 
       # Runs a set of commands using the runners shell
