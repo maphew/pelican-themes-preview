@@ -20,6 +20,18 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    - name: pip-secure-install
+      # You may pin to the exact commit or the version.
+      # uses: brettcannon/pip-secure-install@92f400e3191171c1858cc0e0d9ac6320173fdb0c
+      uses: brettcannon/pip-secure-install@v1.0.0
+      with:
+        # Command to run Python
+        python: # default is python
+        # Path to a requirements file
+        requirements-file: # default is requirements.txt
+        # Extra CLI options
+        options: # optional
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
