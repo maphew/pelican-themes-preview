@@ -29,9 +29,9 @@ jobs:
         uses: brettcannon/pip-secure-install@v1.0.0
         with:
           # Command to run Python
-          python: # default is python
+          python: python # default is python
           # Path to a requirements file
-          requirements-file: # default is requirements.txt
+          requirements-file: requirements.txt # default is requirements.txt
           # Extra CLI options
           options: # optional
 
