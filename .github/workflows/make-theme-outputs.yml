@@ -13,6 +13,10 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+environment:
+  name: github-pages
+  url: ${{ steps.deployment.outputs.page_url }}
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -67,24 +71,14 @@ jobs:
           echo sh ./make-theme-outputs.sh
           sh ./make-theme-outputs.sh
                   
-# Next job  
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      # - name: Checkout
-      #   uses: actions/checkout@v3
+      # Deploy to Github Pages
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
+          # Upload files
           path: 'output'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-      ## END: static.yml
