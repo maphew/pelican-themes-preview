@@ -1,6 +1,17 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Build Pelican Themes Output
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 # Controls when the workflow will run
 on:
@@ -47,13 +58,33 @@ jobs:
           submodules: recursive
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Install Pelican
+        run: python -m pip install pelican[markdown]
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          python -m pip install pelican[markdown]
           echo sh ./make-theme-outputs.sh
           sh ./make-theme-outputs.sh
-          
+                  
+# Next job  
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      # - name: Checkout
+      #   uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: 'output'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+      ## END: static.yml
