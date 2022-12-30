@@ -64,9 +64,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Generate theme output files
-        run: |
-          echo sh ./make-theme-outputs.sh
-          sh ./make-theme-outputs.sh
+        run: sh ./make-theme-outputs.sh
       
       # GH Pages doesn't allow directory browsing
       - name: Make index.html for the output dir
