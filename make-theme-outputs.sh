@@ -3,7 +3,7 @@
 # silence warnings about missing images folder, which isn't in code repo 
 # mkdir -p "pelican-blog/content/images"
 
-for i in ../pelican-themes/a* ; do
+for i in ../pelican-themes/ce* ; do
   if [ -d "$i" ]; then
     theme=$(basename "$i")
     echo "### $theme ###"
@@ -15,6 +15,7 @@ for i in ../pelican-themes/a* ; do
       --output output/$theme \
       --ignore-cache \
       --delete-output-directory \
-      --quiet
+      # --quiet
+
   fi
 done

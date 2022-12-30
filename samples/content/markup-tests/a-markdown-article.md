@@ -1,8 +1,8 @@
 Author: David Colton
 Date: 2020-02-23 10:30
 Modified: 2020-03-08 22:55
-Category: blogging
-Tags: markdown, pygments
+Category: markup
+Tags: misc, test
 Title: Pelican Markdown Test Page 
 Slug: markdown_examples
 
