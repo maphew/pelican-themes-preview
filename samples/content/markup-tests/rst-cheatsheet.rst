@@ -10,7 +10,7 @@ rST Cheat Sheet
 :slug: a brief introduction to reStructuredText (reST) concepts and syntax
 
 
-*This is a copy of rst-cheatsheet.rst from*
+*This is a lightly modified copy of rst-cheatsheet.rst from*
 https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst
 *commit ``62ce5c7``*
 
@@ -418,8 +418,9 @@ They all begin with two periods and whitespace, the "explicit markup start".
 |                                                               |                                                             |
 |   For instance:                                               |   For instance:                                             |
 |                                                               |                                                             |
-|   .. image:: magnetic-balls.jpg                               |   .. image:: magnetic-balls.jpg                             |
-|      :width: 40pt                                             |      :width: 40pt                                           |
+|   .. image:: magnetic-balls.jpg                               |   .. image:: {static}/pictures/magnetic-balls.jpg           |
+|      :width: 55pt                                             |      :width: 55pt                                           |
+|      :alt: silver balls in an arc                             |      :alt: silver balls in an arc                           |        
 |                                                               |                                                             |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 |                                                                                                                             |
@@ -432,7 +433,7 @@ They all begin with two periods and whitespace, the "explicit markup start".
 |   The |biohazard| symbol must be used on containers used to   |   The |biohazard| symbol must be used on containers used to |
 |   dispose of medical waste.                                   |   dispose of medical waste.                                 |
 |                                                               |                                                             |
-|   .. |biohazard| image:: biohazard.png                        |   .. |biohazard| image:: biohazard.png                      |
+|   .. |biohazard| image:: biohazard.png                        |   .. |biohazard| image:: {static}/pictures/biohazard.png    |
 |      :align: middle                                           |      :align: middle                                         |
 |      :width: 12                                               |      :width: 12                                             |
 +---------------------------------------------------------------+-------------------------------------------------------------+
