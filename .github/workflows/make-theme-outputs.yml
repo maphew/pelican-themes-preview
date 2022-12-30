@@ -16,8 +16,8 @@ concurrency:
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
+  # push:
+  #   branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -37,15 +37,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Checkout Pelican Blog
-        uses: actions/checkout@v2.6.0
-        with:
-          # Repository name with owner. For example, actions/checkout
-          repository: getpelican/pelican-blog
-          path: pelican-blog # optional
-          # Whether to execute `git clean -ffdx && git reset --hard HEAD` before fetching
-          clean: true # optional, default is true
-          fetch-depth: 1 # optional, default is 1
+      # - name: Checkout Pelican Blog
+      #   uses: actions/checkout@v2.6.0
+      #   with:
+      #     # Repository name with owner. For example, actions/checkout
+      #     repository: getpelican/pelican-blog
+      #     path: pelican-blog # optional
+      #     # Whether to execute `git clean -ffdx && git reset --hard HEAD` before fetching
+      #     clean: true # optional, default is true
+      #     fetch-depth: 1 # optional, default is 1
 
       - name: Checkout Pelican Themes
         uses: actions/checkout@v2.6.0
