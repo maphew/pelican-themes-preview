@@ -3,13 +3,11 @@
 Themes which don't work with this generator. I'm calling them broken, but
 it might be this script which is broken and not the theme itself.
 
----------------------------
 | Type of broken | Number |
----------------------------
+|----------------|--------|
 | No html        |     44 | 
 | Unstyled*      |     12 |
 | Other          |      1 |
----------------------------
 
 \* Very likely _w3-personal-blog_ is __meant__ to appear unstyled.
 
