@@ -19,5 +19,3 @@ for i in ../pelican-themes/* ; do
 
   fi
 done
-
-python make-index.py output/
