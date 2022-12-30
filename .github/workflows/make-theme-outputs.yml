@@ -52,7 +52,7 @@ jobs:
         with:
           # Repository name with owner. For example, actions/checkout
           repository: getpelican/pelican-themes
-          path: ../pelican-themes # optional
+          path: pelican-themes # optional
           # Whether to execute `git clean -ffdx && git reset --hard HEAD` before fetching
           clean: true # optional, default is true
           fetch-depth: 1 # optional, default is 1

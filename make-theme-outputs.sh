@@ -3,7 +3,7 @@
 # silence warnings about missing images folder, which isn't in code repo 
 # mkdir -p "pelican-blog/content/images"
 
-for i in ../pelican-themes/* ; do
+for i in ../pelican-themes/* pelican-themes/*; do
   if [ -d "$i" ]; then
     theme=$(basename "$i")
     echo "### $theme ###"
