@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in pelican-themes/c*; do
+for i in pelican-themes/*; do
   if [ -d "$i" ]; then
     theme=$(basename "$i")
 
@@ -11,7 +11,7 @@ echo "--- $theme ---"
 pelican \
 samples/content \
 --settings samples/pelican.conf.py \
---extra-settings SITENAME='"$theme"' \
+--extra-settings SITENAME='"$theme theme sample"' \
 --relative-urls \
 --theme-path pelican-themes/$theme \
 --output output/$theme \
