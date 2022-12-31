@@ -7,7 +7,7 @@ for i in pelican-themes/c*; do
     # Write pelican command to file
     # works around nested quote issues in extra-settings
     cat << EOF > xx-build.sh
-echo "### $theme ###"
+echo "--- $theme ---"
 pelican \
 samples/content \
 --settings samples/pelican.conf.py \
@@ -20,6 +20,7 @@ samples/content \
 --quiet
 EOF
 
+    echo ""
     sh xx-build.sh
     rm xx-build.sh  # clean up
 
