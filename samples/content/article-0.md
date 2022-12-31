@@ -8,6 +8,12 @@ pages are filled with nonsense [_lorem ipsum_][0] words in order to provide
 bulk for theme developers to work with. This allows play and testing with
 various presentation methods for different kinds of text.
 
+The content is adapted from the Pelican [`samples`][1] folder, unknowingly
+aided and abetted by [David Colton][2], [Roberto Alsina][3], [Markdownum][4], [Lipsum.com][5] and [ChatGPT][6].
+
+[2]: https://davidcolton.github.io/articles/2020/02/23/markdown_examples/index.html
+[3]: https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst
+
 ### Puer Cerealia cura animique non putant verum
 
 Cadmi vinco ad sanguisque discrimen *rector sustineat* caelique *his*, erat
@@ -29,3 +35,9 @@ if (offline_vlb_virus + urlNative(variable_box, northbridge, kde)) {
 ```
 
 [0]: https://en.wikipedia.org/wiki/Lorem_ipsum
+[1]: https://github.com/getpelican/pelican/tree/master/samples
+[2]: https://davidcolton.github.io/articles/2020/02/23/markdown_examples/index.html
+[3]: https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst
+[4]: https://jaspervdj.be/lorem-markdownum/
+[5]: https://www.lipsum.com/
+[6]: https://en.wikipedia.org/wiki/ChatGPT
