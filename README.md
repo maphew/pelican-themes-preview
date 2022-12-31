@@ -1,47 +1,39 @@
 # pelican-themes-preview
 
+___A static site to preview the Pelican static site generator's themes___
+
 A repo to test and share the the proof of concept laid out at 
 https://github.com/getpelican/pelican-themes/issues/731#issuecomment-1365656511
 
-___Hey let's create a static site to preview the Pelican static site generator's themes___
 
 Prep:
 ```
-pip install pelican[markdown]
-git clone --depth=1 https://github.com/getpelican/pelican-blog`.git
+pip install pelican[markdown] invoke mako
 git clone --depth=1 --recurse-submodules https://github.com/getpelican/pelican-themes.git
 ```
 
-Create `make-theme-outputs.sh` and fill with:
+(Attempt to) generate all theme previews:
 
-```
-#!/bin/bash
-# silence warnings about missing images folder, which isn't in code repo 
-mkdir -p "pelican-blog/content/images"
-for i in pelican-themes/* ; do
-  if [ -d "$i" ]; then
-    theme=$(basename "$i")
-    echo "### $theme ###"
-    pelican \
-      pelican-blog/content \
-      --settings pelican-blog/pelicanconf.py \
-      --relative-urls \
-      --theme-path pelican-themes/$theme \
-      --output output/$theme \
-      --ignore-cache \
-      --delete-output-directory
-  fi
-done
-```
+    sh ./make-theme-outputs.sh
 
-Then make the script executable:  `chmod +x make-theme-outputs.sh` and (attempt to) generate all theme previews:
+Only make previews for themes that start with "boot":
 
-```
-./make-theme-outputs.sh
-```
+    sh ./make-theme-outputs.sh boot
 
-Open results (`output/$theme_name/index.html`) in live preview browser (4 open here):
+Build a master index.html for all the output folders:
+
+    python make-index.py output/
+
+Preview using local server (http://localhost:8000/):
+
+    python -m http.server 8000 -d output
+
+
+Open results (`output/$theme_name/index.html`) in live preview browser (4
+open in this screenshot):
 ![image](https://user-images.githubusercontent.com/486200/209745390-dc8bf82e-ea1b-4625-8fc7-af3755328a41.png)
 
 
 I'm happy to transfer ownership of this repo to @getpelican if it suits their aims.
+
+[0]: make-theme-outputs.sh 

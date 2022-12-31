@@ -1,6 +1,17 @@
 #!/bin/bash
+# Construct a Pelican command for each theme, build html sute for that 
+# theme from sample content, ensuring site uses theme name.
+#
+# Usage: make-theme-outputs.sh [otional dir prefix]
+#
+#   make-theme-outputs.sh boot
+#
+# ...will only process theme directories that start with "boot".
+# Leave empty to process all themes.
+#
+prefix=$1
 
-for i in pelican-themes/*; do
+for i in pelican-themes/$prefix*; do
   if [ -d "$i" ]; then
     theme=$(basename "$i")
 
