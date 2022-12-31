@@ -2,35 +2,24 @@
 
 Prep - Linux:
     sudo apt install chromium-browser
-    pip install selenium
-    pip install --upgrade --force-reinstall chromedriver-binary-auto
-
-Adapted from:
-- https://stackoverflow.com/questions/4091940/how-to-save-web-page-as-image-using-python
-- https://github.com/danielkaiser/python-chromedriver-binary
+    pip install --upgrade html2image
 '''
 import os
 import sys
-from selenium import webdriver
-import chromedriver_binary  # Adds chromedriver binary to path
+from html2image import Html2Image
 
 if len(sys.argv) < 2:
-    print("Error: No directory path provided")
+    print("Error: No theme shortname provided")
     sys.exit(1)
 
-dir_path = os.path.basename(sys.argv[1])
+theme = os.path.basename(sys.argv[1])
 prefix = "https://maphew.github.io/pelican-themes-preview"
 
+hti = Html2Image()
+hti.browser.flags = ['--virtual-time-budget=50000']
+hti.size = (1024, 768)
+hti.output_path = "screenshots"
 
-def get_shot(dir, prefix=prefix):
-    print(f"Fetching {prefix}/{dir}")
-    driver.get(f"{prefix}/{dir}")
-    # assert "Python" in driver.title
-    destination = f"screenshots/{dir}.png"
-    if driver.save_screenshot(destination):
-        print(f"Saved as {destination}")
-
-
-driver = webdriver.Chrome()
-get_shot(dir_path)
-driver.quit()
+print(f"Fetching {prefix}/{theme}")
+results = hti.screenshot(url=f"{prefix}/{theme}", save_as=f"{theme}.png")
+print(f"Saved    {results[0]}")
