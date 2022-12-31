@@ -3,10 +3,10 @@ Date: 2020-02-23 10:30
 Modified: 2020-03-08 22:55
 Category: markup
 Tags: misc, test
-Title: Pelican Markdown Test Page 
+Title: Pelican Markdown Test Page
 Slug: markdown_examples
 
-# Examine how Markdown is rendered with Pelican
+***Examine how Markdown is rendered with Pelican***
 
 _This is a lightly modified copy of original article:_
 
