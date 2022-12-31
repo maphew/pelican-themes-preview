@@ -7,7 +7,7 @@ TIMEZONE = "Europe/Paris"
 # can be useful in development, but set to False when you're ready to publish
 RELATIVE_URLS = True
 
-GITHUB_URL = 'http://github.com/ametaireau/'
+GITHUB_URL = 'https://github.com/getpelican/pelican/'
 DISQUS_SITENAME = "blog-notmyidea"
 REVERSE_CATEGORY_ORDER = True
 LOCALE = "C"
