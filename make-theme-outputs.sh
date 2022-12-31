@@ -1,21 +1,27 @@
 #!/bin/bash
 
-# silence warnings about missing images folder, which isn't in code repo 
-# mkdir -p "pelican-blog/content/images"
-
-for i in ../pelican-themes/* pelican-themes/*; do
+for i in pelican-themes/c*; do
   if [ -d "$i" ]; then
     theme=$(basename "$i")
-    echo "### $theme ###"
-    pelican \
-      samples/content \
-      --settings samples/pelican.conf.py \
-      --relative-urls \
-      --theme-path ../pelican-themes/$theme \
-      --output output/$theme \
-      --ignore-cache \
-      --delete-output-directory \
-      # --quiet
+
+    # Write pelican command to file
+    # works around nested quote issues in extra-settings
+    cat << EOF > xx-build.sh
+echo "### $theme ###"
+pelican \
+samples/content \
+--settings samples/pelican.conf.py \
+--extra-settings SITENAME='"$theme"' \
+--relative-urls \
+--theme-path pelican-themes/$theme \
+--output output/$theme \
+--ignore-cache \
+--delete-output-directory \
+--quiet
+EOF
+
+    sh xx-build.sh
+    rm xx-build.sh  # clean up
 
   fi
 done
