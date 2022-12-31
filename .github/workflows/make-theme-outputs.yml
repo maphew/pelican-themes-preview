@@ -54,7 +54,9 @@ jobs:
           repository: getpelican/pelican-themes
           path: pelican-themes # optional
           # Whether to execute `git clean -ffdx && git reset --hard HEAD` before fetching
-          clean: true # optional, default is true
+          # (setting as false in attempt to speed up action time. Takes
+          # almost 2.5 min when true)
+          clean: false # optional, default is true
           fetch-depth: 1 # optional, default is 1
           submodules: recursive
 
