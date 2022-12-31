@@ -11,8 +11,6 @@ various presentation methods for different kinds of text.
 The content is adapted from the Pelican [`samples`][1] folder, unknowingly
 aided and abetted by [David Colton][2], [Roberto Alsina][3], [Markdownum][4], [Lipsum.com][5] and [ChatGPT][6].
 
-[2]: https://davidcolton.github.io/articles/2020/02/23/markdown_examples/index.html
-[3]: https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst
 
 ### Puer Cerealia cura animique non putant verum
 

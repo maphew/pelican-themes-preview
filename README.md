@@ -2,8 +2,10 @@
 
 ___A static site to preview the Pelican static site generator's themes___
 
-A repo to test and share the the proof of concept laid out at 
-https://github.com/getpelican/pelican-themes/issues/731#issuecomment-1365656511
+A repo to test and share the the proof of concept laid out at Pelican Themes
+[issue #740](https://github.com/getpelican/pelican-themes/issues/740)
+
+**Latest results: https://maphew.github.io/pelican-themes-preview/**
 
 
 Prep:
