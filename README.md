@@ -7,6 +7,9 @@ A repo to test and share the the proof of concept laid out at Pelican Themes
 
 **Latest results: https://maphew.github.io/pelican-themes-preview/**
 
+**Image gallery:** https://imgur.com/gallery/cL2HI2e
+(snapshot in time, no promise of keeping up to date)
+
 
 Prep:
 ```
