@@ -12,6 +12,6 @@ for i in output/$prefix*/index.html; do
       theme=$(basename $(dirname "$i"))
       echo "$url/$theme"
       echo " - url: $url/$theme"                >> shots.yml
-      echo "    output: screenshots/$theme.png" >> shots.yml
-      echo "    height: 800"                    >> shots.yml 
+      echo "   output: screenshots/$theme.png" >> shots.yml
+      echo "   height: 800"                    >> shots.yml 
 done
