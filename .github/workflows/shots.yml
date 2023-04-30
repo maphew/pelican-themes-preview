@@ -1,32 +1,32 @@
 name: Take screenshots
 
-on:
-  push:
-  workflow_dispatch:
+on: 
+  push: 
+  workflow_dispatch: 
 
-permissions:
+permissions: 
   contents: write
 
-jobs:
-  shot-scraper:
+jobs: 
+  shot-scraper: 
     runs-on: ubuntu-latest
     if: ${{ github.repository != 'simonw/shot-scraper-template' }}
-    steps:
+    steps: 
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
-      with:
+      with: 
         python-version: "3.10"
     - uses: actions/cache@v3
       name: Configure pip caching
-      with:
+      with: 
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
     - name: Cache Playwright browsers
       uses: actions/cache@v3
-      with:
+      with: 
         path: ~/.cache/ms-playwright/
         key: ${{ runner.os }}-browsers
     - name: Install dependencies
@@ -37,7 +37,7 @@ jobs:
         shot-scraper install
     - uses: actions/github-script@v6
       name: Create shots.yml if missing on first run
-      with:
+      with: 
         script: |
           const fs = require('fs');
           if (!fs.existsSync('shots.yml')) {
