@@ -17,11 +17,11 @@ pip install pelican[markdown] invoke mako
 git clone --depth=1 --recurse-submodules https://github.com/getpelican/pelican-themes.git
 ```
 
-(Attempt to) generate all theme previews:
+(Attempt to) generate a local static site of each theme:
 
     sh ./make-theme-outputs.sh
 
-Only make previews for themes that start with "boot":
+Only make site for themes that start with "boot":
 
     sh ./make-theme-outputs.sh boot
 
@@ -33,11 +33,21 @@ Preview using local server (http://localhost:8000/):
 
     python -m http.server 8000 -d output
 
-
 Open results (`output/$theme_name/index.html`) in live preview browser (4
 open in this screenshot):
 ![image](https://user-images.githubusercontent.com/486200/209745390-dc8bf82e-ea1b-4625-8fc7-af3755328a41.png)
 
+Generate Github Actions yaml file (`./shots.yml`) to take screenshots of each static site:
+
+    make-shots-yaml.sh
+
+After the action is complete the repo will have the screenshots in:
+
+    ./screenshots
+
+TODO: fix the chicken and egg problem where the screenshots action records
+shots of the _previously published_ theme preview static sites, but with the latest
+commit we've also just rebuilt all the theme preview sites.
 
 I'm happy to transfer ownership of this repo to @getpelican if it suits their aims.
 
